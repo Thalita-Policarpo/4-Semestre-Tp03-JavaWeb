@@ -2,12 +2,14 @@ package br.edu.infnet.thalitapolicarpo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.thalitapolicarpo.model.domain.Hidrante;
 import br.edu.infnet.thalitapolicarpo.model.service.HidranteService;
 
 @Component
+@Order(2)
 public class HidranteLoader implements CommandLineRunner {
 
     @Autowired

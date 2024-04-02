@@ -3,12 +3,14 @@ package br.edu.infnet.thalitapolicarpo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.thalitapolicarpo.model.domain.Extintor;
 import br.edu.infnet.thalitapolicarpo.model.service.ExtintorService;
 
 @Component
+@Order(1)
 public class ExtintorLoader implements ApplicationRunner {
 	
 	@Autowired
