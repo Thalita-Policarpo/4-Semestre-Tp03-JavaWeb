@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.thalitapolicarpo.model.domain.Hidrante;
 import br.edu.infnet.thalitapolicarpo.model.domain.InspecoesHidrante;
 
 @Service
@@ -67,10 +68,14 @@ public class InspecoesHidranteService {
 
 
 	public void atualizarInspecao(int numeroControleInterno, InspecoesHidrante inspecao) {
-	    if(inspecoes.containsKey(numeroControleInterno)) {
+	    HidranteService hidranteService = new HidranteService();
+		Hidrante hidrante = hidranteService .obterPorNumeroControleInterno(numeroControleInterno);
+	    if (hidrante != null && inspecoes.containsKey(numeroControleInterno)) {
+	        inspecao.setHidrante(hidrante);
 	        inspecoes.put(numeroControleInterno, inspecao);
 	    }
 	}
+
 	
 	
     public void excluirInspecao(int numeroControleInterno) {
