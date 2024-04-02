@@ -20,7 +20,7 @@ public class HidranteLoader implements CommandLineRunner {
         
         hidranteService.incluirEquipamento(new Hidrante(1, "Localização 1", "01/01/2025", "60cm", "Hidrante de Superfície - Coluna úmida", "2\"", "Vermelho"));
         hidranteService.incluirEquipamento(new Hidrante(2, "Localização 2", "01/01/2026", "60cm", "Hidrante de Superfície - Coluna úmida", "2\"", "Preto"));
-
+        
         
         System.out.println("Número de Hidrantes: " + hidranteService.obterTodos().size());
     }
