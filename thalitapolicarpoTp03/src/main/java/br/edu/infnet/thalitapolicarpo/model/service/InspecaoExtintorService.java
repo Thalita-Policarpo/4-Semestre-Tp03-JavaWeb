@@ -43,7 +43,9 @@ public class InspecaoExtintorService {
     }
 
     public void atualizarInspecao(int numeroControleInterno, InspecaoExtintor inspecaoExtintor) {
-        if(inspecoes.containsKey(numeroControleInterno)) {
+        Extintor extintor = extintorService.obterPorNumeroControleInterno(numeroControleInterno);
+        if (extintor != null && inspecoes.containsKey(numeroControleInterno)) {
+            inspecaoExtintor.setExtintor(extintor);
             inspecoes.put(numeroControleInterno, inspecaoExtintor);
         }
     }
