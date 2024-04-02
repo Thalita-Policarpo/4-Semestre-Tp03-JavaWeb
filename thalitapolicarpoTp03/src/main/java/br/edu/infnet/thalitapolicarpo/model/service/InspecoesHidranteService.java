@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.thalitapolicarpo.model.domain.Hidrante;
@@ -15,8 +16,12 @@ import br.edu.infnet.thalitapolicarpo.model.domain.InspecoesHidrante;
 @Service
 public class InspecoesHidranteService {
 	
+	@Autowired
+	private HidranteService hidranteService;
+
 	private Map<Integer, InspecoesHidrante> inspecoes = new HashMap<>();
 
+	
 	public void realizarInspecao(int numeroControleInterno, InspecoesHidrante inspecao) {
 		Hidrante hidrante = hidranteService.obterPorNumeroControleInterno(numeroControleInterno);
 	    if (hidrante != null) {
@@ -75,15 +80,13 @@ public class InspecoesHidranteService {
 
 
 	public void atualizarInspecao(int numeroControleInterno, InspecoesHidrante inspecao) {
-	    HidranteService hidranteService = new HidranteService();
-		Hidrante hidrante = hidranteService .obterPorNumeroControleInterno(numeroControleInterno);
+	    Hidrante hidrante = hidranteService.obterPorNumeroControleInterno(numeroControleInterno);
 	    if (hidrante != null && inspecoes.containsKey(numeroControleInterno)) {
 	        inspecao.setHidrante(hidrante);
 	        inspecoes.put(numeroControleInterno, inspecao);
 	    }
 	}
 
-	
 	
     public void excluirInspecao(int numeroControleInterno) {
         inspecoes.remove(numeroControleInterno);
