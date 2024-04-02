@@ -22,12 +22,12 @@ public class InspecoesHidranteLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
     	Hidrante hidrante1 = new Hidrante(3, "Prédio 1", "01/01/2025", "60cm", "Hidrante de Superfície - Coluna úmida", "2\"", "Vermelho");
     	InspecoesHidrante inspecaoHidrante1 = new  InspecoesHidrante(hidrante1, "01/01/2022", true, true, true, 2, Arrays.asList(15, 15), Arrays.asList("01/01/2025", "01/01/2025"));
-    	inspecoesHidranteService.realizarInspecao(1, inspecaoHidrante1);
+    	inspecoesHidranteService.realizarInspecao(3, inspecaoHidrante1);
     	
     	
     	Hidrante hidrante2 = new Hidrante(4, "Prédio 2", "01/01/2025", "60cm", "Hidrante de Superfície - Coluna úmida", "2\"", "Vermelho");
     	InspecoesHidrante inspecaoHidrante2 = new  InspecoesHidrante(hidrante2, "01/01/2022", true, true, true, 2, Arrays.asList(15, 15), Arrays.asList("01/01/2025", "01/01/2025"));
-    	inspecoesHidranteService.realizarInspecao(2, inspecaoHidrante2);
+    	inspecoesHidranteService.realizarInspecao(4, inspecaoHidrante2);
     	
     	System.out.println("Número de InspeçõesHidrante: " + inspecoesHidranteService.obterTodos().size());
     }
