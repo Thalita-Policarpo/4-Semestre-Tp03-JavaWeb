@@ -1,0 +1,28 @@
+plugins {
+    id 'org.springframework.boot' version '3.2.4' // Define o plugin do Spring Boot e sua versão
+}
+
+group 'br.edu.infnet'
+version '0.0.1-SNAPSHOT'
+
+description 'Projeto Java Web Inspeções PCI - Thalita Policarpo'
+
+// Define as propriedades do projeto
+sourceCompatibility = '17'
+
+// Define as dependências do projeto
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web' // Dependência do Spring Boot para aplicativos web
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // Dependência do Spring Boot para testes
+    testImplementation 'org.junit.jupiter:junit-jupiter-api' // Dependência do JUnit Jupiter para testes
+}
+
+// Configurações adicionais para o Gradle
+test {
+    useJUnitPlatform() // Utiliza a plataforma JUnit para execução de testes
+}
+
+// Define os plugins do Spring Boot para empacotamento e execução
+bootJar {
+    enabled = true // Ativa o plugin de empacotamento do Spring Boot
+}
