@@ -1,4 +1,4 @@
-package br.edu.infnet.thalitapolicarpo;
+package br.edu.infnet.thalitapolicarpo.service;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

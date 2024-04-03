@@ -1,4 +1,4 @@
-package br.edu.infnet.thalitapolicarpo;
+package br.edu.infnet.thalitapolicarpo.domain;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

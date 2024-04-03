@@ -1,4 +1,4 @@
-package br.edu.infnet.thalitapolicarpo;
+package br.edu.infnet.thalitapolicarpo.domain;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
